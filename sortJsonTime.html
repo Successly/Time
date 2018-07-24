@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var data = {
+    "rows": [{
+        "name": "张三",
+        "time": "2011/4/1 0:00:00",
+    },{
+        "name": "李四",
+        "time": "2015/5/6 12:30:00",
+    },{
+        "name": "王五",
+        "time": "2012/10/1 22:10:00",
+    },{
+        "name": "赵六",
+        "time": "2011/9/1 22:10:00",
+    }]
+};
+var rows = data.rows;
+rows.sort(function(a,b){
+    return Date.parse(a.time) - Date.parse(b.time);//时间正序
+});
+for(var i =0,l=rows.length;i<l;i++){
+    console.log(rows[i].name + " | " + rows[i].time);
+}
+
+
+// 张三 | 2011/4/1 0:00:00
+// 赵六 | 2011/9/1 22:10:00
+// 王五 | 2012/10/1 22:10:00
+// 李四 | 2015/5/6 12:30:00
+</script>
+</html>
